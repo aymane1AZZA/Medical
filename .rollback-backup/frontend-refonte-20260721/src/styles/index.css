@@ -1,0 +1,107 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-sans: "Geist Variable", "Segoe UI", sans-serif;
+    --font-heading: var(--font-sans);
+    --background: oklch(0.975 0.006 190);
+    --foreground: oklch(0.235 0.025 230);
+    --card: oklch(1 0 0);
+    --card-foreground: var(--foreground);
+    --popover: oklch(1 0 0);
+    --popover-foreground: var(--foreground);
+    --primary: oklch(0.49 0.095 184);
+    --primary-foreground: oklch(0.99 0.003 180);
+    --secondary: oklch(0.955 0.012 190);
+    --secondary-foreground: oklch(0.31 0.045 190);
+    --muted: oklch(0.952 0.006 220);
+    --muted-foreground: oklch(0.49 0.025 225);
+    --accent: oklch(0.93 0.025 190);
+    --accent-foreground: oklch(0.31 0.06 185);
+    --destructive: oklch(0.55 0.2 27);
+    --destructive-foreground: oklch(0.99 0 0);
+    --border: oklch(0.88 0.012 215);
+    --input: oklch(0.86 0.014 215);
+    --ring: oklch(0.57 0.11 188);
+    --info: oklch(0.54 0.16 250);
+    --info-foreground: oklch(0.985 0 0);
+    --success: oklch(0.52 0.13 153);
+    --success-foreground: oklch(0.985 0 0);
+    --warning: oklch(0.72 0.15 75);
+    --warning-foreground: oklch(0.28 0.05 60);
+    --critical: oklch(0.5 0.2 27);
+    --critical-foreground: oklch(0.99 0 0);
+    --radius: 0.5rem;
+    --sidebar: oklch(0.245 0.026 224);
+    --sidebar-foreground: oklch(0.94 0.008 210);
+    --sidebar-primary: oklch(0.67 0.11 181);
+    --sidebar-primary-foreground: oklch(0.2 0.025 220);
+    --sidebar-accent: oklch(0.31 0.035 220);
+    --sidebar-accent-foreground: oklch(0.99 0 0);
+    --sidebar-border: oklch(0.35 0.025 220);
+    --sidebar-ring: oklch(0.68 0.1 185);
+    --chart-1: var(--primary);
+    --chart-2: var(--info);
+    --chart-3: var(--success);
+    --chart-4: var(--warning);
+    --chart-5: var(--critical);
+  }
+
+  * {
+    @apply border-border;
+    outline-color: color-mix(in oklch, var(--ring) 55%, transparent);
+  }
+
+  html {
+    @apply font-sans;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply m-0 min-w-[320px] bg-background text-foreground antialiased;
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .clinical-panel {
+    @apply rounded-lg border bg-card text-card-foreground;
+  }
+
+  .tabular-clinical {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .text-wrap-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

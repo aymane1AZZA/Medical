@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explorations visuelles isolees pour le cockpit d'apherese Apheris." />
+    <title>Apheris - Explorations visuelles</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-a">
+    <a class="skip-link" href="#cockpit-main">Aller au cockpit</a>
+
+    <header class="explorer-bar" aria-label="Comparateur des directions artistiques">
+      <div class="explorer-brand">
+        <span class="explorer-kicker">Phase 2 / zone isolee</span>
+        <strong>Apheris - comparaison du cockpit infirmier</strong>
+      </div>
+      <div class="direction-switcher" role="tablist" aria-label="Direction artistique">
+        <button class="direction-tab is-selected" role="tab" aria-selected="true" data-direction="a">
+          <span>A</span> Clinical Precision
+        </button>
+        <button class="direction-tab" role="tab" aria-selected="false" data-direction="b">
+          <span>B</span> Human Clinical Operations
+        </button>
+        <button class="direction-tab" role="tab" aria-selected="false" data-direction="c">
+          <span>C</span> Advanced Hospital Command
+        </button>
+      </div>
+      <p id="direction-summary" class="direction-summary">
+        Structure rigoureuse, donnees compactes et tracabilite au premier plan.
+      </p>
+    </header>
+
+    <div class="prototype-stage">
+      <section class="prototype-shell" aria-label="Prototype du cockpit de seance">
+        <aside class="side-nav" aria-label="Navigation metier">
+          <div class="brand-lockup">
+            <img src="assets/chu-logo.png" alt="CHU Mohammed VI Marrakech" />
+            <span><strong>Apheris</strong><small>Unite d'apherese</small></span>
+          </div>
+          <nav>
+            <button class="nav-item"><span class="nav-mark">V</span><span>Vue clinique</span></button>
+            <button class="nav-item"><span class="nav-mark">P</span><span>Patients</span></button>
+            <button class="nav-item is-active" aria-current="page"><span class="nav-mark">S</span><span>Seances</span></button>
+            <button class="nav-item"><span class="nav-mark">B</span><span>Biologie</span></button>
+            <button class="nav-item"><span class="nav-mark">E</span><span>Equipements</span></button>
+          </nav>
+          <div class="session-owner">
+            <span class="avatar">SB</span>
+            <span><strong>Salma Bennani</strong><small>Infirmiere</small></span>
+          </div>
+        </aside>
+
+        <header class="topbar">
+          <div>
+            <button class="icon-button mobile-menu" aria-label="Ouvrir la navigation">Menu</button>
+            <span class="breadcrumb">Seances / APH-2026-0714</span>
+          </div>
+          <div class="top-actions">
+            <label class="search-field"><span class="sr-only">Recherche clinique</span><input type="search" placeholder="Patient, IPP, seance..." /></label>
+            <button class="icon-button" id="open-drawer" aria-controls="secondary-panel" aria-expanded="false">Panneau</button>
+          </div>
+        </header>
+
+        <section class="patient-context" aria-labelledby="patient-name">
+          <div class="patient-identity">
+            <span class="avatar avatar-patient">YA</span>
+            <div><span class="eyebrow">Patient confirme</span><h1 id="patient-name">Yasmine Amrani</h1></div>
+          </div>
+          <dl class="patient-facts">
+            <div><dt>IPP</dt><dd>P-240184</dd></div>
+            <div><dt>Age</dt><dd>34 ans</dd></div>
+            <div><dt>Groupe</dt><dd>O+</dd></div>
+            <div><dt>Indication</dt><dd>Myasthenie generalisee</dd></div>
+          </dl>
+          <button class="button secondary">Ouvrir le dossier</button>
+        </section>
+
+        <main id="cockpit-main" class="cockpit-main" tabindex="-1">
+          <section class="session-heading">
+            <div>
+              <span class="status status-active"><span class="status-symbol" aria-hidden="true"></span>Seance active</span>
+              <h2>Echanges plasmatiques therapeutiques</h2>
+              <p>Seance 4/5 - Box 02 - Spectra Optia SO-042</p>
+            </div>
+            <div class="session-clock"><small>Temps ecoule</small><strong>01:18:42</strong><span>Debut 08:42</span></div>
+          </section>
+
+          <nav class="workflow" aria-label="Etapes de la seance">
+            <button class="workflow-step is-complete" data-step="1"><span>1</span><strong>Patient</strong><small>Verifie</small></button>
+            <button class="workflow-step is-complete" data-step="2"><span>2</span><strong>Controle</strong><small>Conforme</small></button>
+            <button class="workflow-step is-complete" data-step="3"><span>3</span><strong>Dispositif</strong><small>Configure</small></button>
+            <button class="workflow-step is-current" data-step="4" aria-current="step"><span>4</span><strong>Surveillance</strong><small>En cours</small></button>
+            <button class="workflow-step" data-step="5"><span>5</span><strong>Cloture</strong><small>En attente</small></button>
+          </nav>
+
+          <div class="clinical-grid">
+            <section class="panel vitals-panel" aria-labelledby="vitals-title">
+              <div class="panel-header"><div><span class="eyebrow">Dernier releve 10:00</span><h3 id="vitals-title">Constantes</h3></div><span class="status status-success">Stables</span></div>
+              <div class="vitals-grid">
+                <article><span>TA</span><strong>119/73</strong><small>mmHg</small><i class="trend">Dans la cible</i></article>
+                <article><span>FC</span><strong>77</strong><small>bpm</small><i class="trend">+2 / 20 min</i></article>
+                <article><span>SpO2</span><strong>98</strong><small>%</small><i class="trend">Stable</i></article>
+                <article><span>Temperature</span><strong>36,7</strong><small>deg C</small><i class="trend">Stable</i></article>
+              </div>
+              <div class="trend-chart" role="img" aria-label="Evolution de la frequence cardiaque entre 8 h 42 et 10 h">
+                <div class="chart-scale"><span>90</span><span>70</span><span>50</span></div>
+                <svg viewBox="0 0 520 110" preserveAspectRatio="none" aria-hidden="true">
+                  <path class="threshold" d="M0 34 H520 M0 82 H520" />
+                  <path class="chart-area" d="M0 67 C52 64 78 72 124 65 S210 55 260 62 S345 66 390 54 S470 60 520 48 L520 110 L0 110 Z" />
+                  <path class="chart-line" d="M0 67 C52 64 78 72 124 65 S210 55 260 62 S345 66 390 54 S470 60 520 48" />
+                </svg>
+                <div class="chart-axis"><span>08:42</span><span>09:20</span><span>10:00</span></div>
+              </div>
+            </section>
+
+            <section class="panel parameters-panel" aria-labelledby="parameters-title">
+              <div class="panel-header"><div><span class="eyebrow">Progression</span><h3 id="parameters-title">Parametres principaux</h3></div><strong>56 %</strong></div>
+              <div class="progress" role="progressbar" aria-label="Volume traite" aria-valuemin="0" aria-valuemax="3200" aria-valuenow="1780"><span style="width:56%"></span></div>
+              <dl class="parameters-list">
+                <div><dt>Volume traite</dt><dd>1 780 / 3 200 mL</dd></div>
+                <div><dt>Debit sanguin</dt><dd>58 mL/min</dd></div>
+                <div><dt>Anticoagulant</dt><dd>ACD-A - 1:12</dd></div>
+                <div><dt>Substitution</dt><dd>Albumine 5 %</dd></div>
+              </dl>
+              <button class="button secondary full-width" id="simulate-save">Enregistrer les parametres</button>
+            </section>
+
+            <section class="panel alert-panel" aria-labelledby="alerts-title">
+              <div class="panel-header"><div><span class="eyebrow">Decision requise</span><h3 id="alerts-title">Alertes cliniques</h3></div><span class="count-badge">2</span></div>
+              <article class="clinical-alert warning">
+                <div><span class="alert-code">ATTENTION</span><strong>Calcium IV a verifier dans 12 min</strong><p>Consigne medicale prophylactique active.</p></div>
+                <button class="text-button">Documenter</button>
+              </article>
+              <article class="clinical-alert error">
+                <div><span class="alert-code">ANORMAL</span><strong>Calcium ionise : 1,08 mmol/L</strong><p>Valeur sous le seuil de reference 1,12.</p></div>
+                <button class="text-button">Voir le bilan</button>
+              </article>
+            </section>
+
+            <section class="panel trace-panel" aria-labelledby="trace-title">
+              <div class="panel-header"><div><span class="eyebrow">Traçabilité</span><h3 id="trace-title">Journal de surveillance</h3></div><span id="selected-count" class="selection-count">0 sélection</span></div>
+              <div class="table-wrap" tabindex="0" aria-label="Journal de surveillance, defilement horizontal possible">
+                <table>
+                  <thead><tr><th scope="col"><span class="sr-only">Selection</span></th><th scope="col">Heure</th><th scope="col">Observation</th><th scope="col">Auteur</th><th scope="col">Statut</th></tr></thead>
+                  <tbody>
+                    <tr><td><label class="check-target"><input class="row-select" type="checkbox" aria-label="Selectionner l'observation de 10 h" /></label></td><td>10:00</td><td>Constantes stables, aucune alarme dispositif</td><td>S. Bennani</td><td><span class="status status-success">Valide</span></td></tr>
+                    <tr><td><label class="check-target"><input class="row-select" type="checkbox" aria-label="Selectionner l'observation de 9 h 40" /></label></td><td>09:40</td><td>Debit abaisse temporairement a 50 mL/min</td><td>S. Bennani</td><td><span class="status status-info">Trace</span></td></tr>
+                    <tr><td><label class="check-target"><input class="row-select" type="checkbox" aria-label="Selectionner l'observation de 9 h 20" /></label></td><td>09:20</td><td>Calcium IV debute selon protocole</td><td>S. Bennani</td><td><span class="status status-info">Trace</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <form id="observation-form" class="observation-form" novalidate>
+                <label for="observation">Nouvelle observation</label>
+                <textarea id="observation" rows="3" placeholder="Decrire un fait clinique observe..."></textarea>
+                <div id="observation-error" class="field-error" role="alert" hidden>Renseignez une observation factuelle avant l'enregistrement.</div>
+                <div class="form-actions">
+                  <div class="segmented" aria-label="Evaluation de tolerance">
+                    <button type="button" class="tolerance is-selected" aria-pressed="true">Bonne</button>
+                    <button type="button" class="tolerance" aria-pressed="false">A surveiller</button>
+                    <button type="button" class="tolerance" aria-pressed="false">Incident</button>
+                  </div>
+                  <button class="button primary" type="submit">Enregistrer l'observation</button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <footer class="cockpit-footer">
+            <div><span class="trace-dot"></span><span>Derniere action : S. Bennani, 10:00</span></div>
+            <div class="footer-actions"><button class="button secondary" disabled title="Disponible apres la verification finale">Cloture indisponible</button><button class="button danger" id="open-modal">Terminer la seance</button></div>
+          </footer>
+        </main>
+
+        <aside id="secondary-panel" class="secondary-panel" aria-label="Panneau secondaire de seance">
+          <div class="secondary-header"><div><span class="eyebrow">Contexte secondaire</span><h2>Seance APH-2026-0714</h2></div><button class="icon-button close-panel" aria-label="Fermer le panneau">Fermer</button></div>
+          <section><h3>Prescription active</h3><dl class="compact-list"><div><dt>Prescripteur</dt><dd>Dr El Mansouri</dd></div><div><dt>Objectif</dt><dd>1,1 volume plasmatique</dd></div><div><dt>Prochaine validation</dt><dd>Cloture medicale</dd></div></dl></section>
+          <section><h3>Equipe et dispositif</h3><dl class="compact-list"><div><dt>Infirmiere</dt><dd>Salma Bennani</dd></div><div><dt>Dispositif</dt><dd>Spectra Optia SO-042</dd></div><div><dt>Auto-test</dt><dd><span class="status status-success">Conforme</span></dd></div></dl></section>
+          <section><h3>Action en attente</h3><div class="pending-action"><strong>Releve des constantes</strong><span>Dans 12 minutes</span><button class="button secondary full-width">Ouvrir la saisie</button></div></section>
+        </aside>
+      </section>
+
+      <section class="preview-section" aria-labelledby="preview-title">
+        <div class="preview-heading"><div><span class="eyebrow">Meme direction, autres ecrans</span><h2 id="preview-title">Apercus multi-role</h2></div><p>Memes donnees et meme profondeur pour les trois comparaisons.</p></div>
+        <div class="preview-grid">
+          <article class="mini-screen mini-record"><header><span>Dossier patient</span><strong>Yasmine Amrani</strong></header><div class="mini-timeline"><p><b>14 juil.</b> Seance 4/5 en cours</p><p><b>12 juil.</b> Bilan pre-seance valide</p><p><b>08 juil.</b> Prescription actualisee</p></div></article>
+          <article class="mini-screen mini-patients"><header><span>Liste patients</span><strong>4 programmes</strong></header><div class="mini-table"><p><b>Y. Amrani</b><span>08:42</span><em>En seance</em></p><p><b>M. Berrada</b><span>10:15</span><em>Preparation</em></p><p><b>L. Chraibi</b><span>11:45</span><em>Bilan requis</em></p></div></article>
+          <article class="mini-screen mini-labs"><header><span>Resultats biologiques</span><strong>1 anormal</strong></header><div class="mini-results"><p><span>Hemoglobine</span><b>11,8 g/dL</b><em>Normal</em></p><p class="is-abnormal"><span>Calcium ionise</span><b>1,08 mmol/L</b><em>Bas</em></p><p><span>Plaquettes</span><b>186 G/L</b><em>Normal</em></p></div></article>
+          <article class="mini-screen mini-admin"><header><span>Administration</span><strong>Acces et audit</strong></header><div class="admin-metrics"><p><b>148</b><span>comptes actifs</span></p><p><b>8</b><span>roles metier</span></p><p><b>6</b><span>droits a revoir</span></p></div><small>Dernier evenement d'audit : attribution de role, 09:54</small></article>
+        </div>
+      </section>
+    </div>
+
+    <div id="drawer-backdrop" class="backdrop" hidden></div>
+    <div id="sensitive-modal" class="modal-backdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <span class="status status-warning">Action clinique sensible</span>
+        <h2 id="modal-title">Terminer la seance ?</h2>
+        <p id="modal-description">Cette action fige la surveillance infirmiere et transmet le dossier pour validation medicale.</p>
+        <label class="confirm-check"><input id="confirm-check" type="checkbox" /> J'ai verifie les constantes, incidents et volumes traces.</label>
+        <div class="modal-actions"><button class="button secondary" id="cancel-modal">Annuler</button><button class="button danger" id="confirm-sensitive" disabled>Confirmer la cloture</button></div>
+      </section>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
